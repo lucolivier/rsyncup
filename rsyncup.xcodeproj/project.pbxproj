@@ -6,10 +6,17 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXFileReference section */
+		3623C5251DAF826D003EBC4E /* rsyncup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = rsyncup.sh; sourceTree = "<group>"; };
+		3623C5261DAF8275003EBC4E /* rsyncup.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = rsyncup.conf; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		3623C51E1DAF81F3003EBC4E = {
 			isa = PBXGroup;
 			children = (
+				3623C5251DAF826D003EBC4E /* rsyncup.sh */,
+				3623C5261DAF8275003EBC4E /* rsyncup.conf */,
 			);
 			sourceTree = "<group>";
 		};
