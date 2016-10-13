@@ -1,0 +1,5 @@
+# rsync
+-A INPUT -m state --state NEW -m tcp -p tcp -s 188.165.203.169 --dport 873 -j ACCEPT
+-A INPUT -m state --state NEW -m tcp -p tcp -s 62.102.229.0/28 --dport 873 -j ACCEPT
+# rsynckups-helper
+-A INPUT -m state --state NEW -m tcp -p tcp -s 62.102.229.0/28 --dport 874 -j ACCEPT
