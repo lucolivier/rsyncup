@@ -1,0 +1,34 @@
+
+----------------------- RAPPORT DE SAUVEGARDE -----------------------
+
+	Serveur : %HOSTNAME%
+	Nom : %NAME%
+	Fichiers : %FILES%
+	Base de données : %DB%
+
+	Date : %DATE%
+	Heure : %TIME%
+	Type : %METHOD%
+	Programmation : %PROG%
+
+	Résultat : %RESULT%
+
+	----
+
+	Le journal d'exécution est consultable au chemin suivant
+	dans votre dossier : %LOGPATH%
+
+	----
+
+	Pour déclencher une sauvegarde en dehors de la programmation
+	habituelle, il suffit de déposer un fichier nommé "--BACKUP--"
+	à la racine de votre dossier, elle sera réalisée à la
+	prochaine exécution à : %HEXE%
+
+	Lorsque la sauvegarde est réalisée, ce fichier est automa-
+	tiquement supprimé.
+
+----------------------- RAPPORT DE SAUVEGARDE -----------------------
+
+rsynckups-%VERS%
+
