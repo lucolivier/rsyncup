@@ -1,0 +1,28 @@
+Rsynckups
+	Test 1.00ß00
+	ANDO & EXO
+	
+	Behaviors
+	_____ Possibility to backup / (with other partitions exclusions)
+	__X__ Possibility to backup localy
+
+	Multi-instance
+	_____	Pass .conf file as param (in order to run differents sets)
+	_____	Wait until other instance finish (because one instance = one destination)
+	_____	Send mail also if other instance running
+	_____	Detect detached rsync still running (double security)
+			before process backup set look for rsync+SOURCE running deamon
+
+	Options
+	__X__	Make send email as option (1.00ß05)
+
+	Stats
+	_____	Option to calculte stats once only after backup
+
+Rsynckups-helper
+	__X__	Implement log by client (a global and a by client)
+	_____	Incremental mech
+	_____	Delete old backup archive
+	
+	
+	
