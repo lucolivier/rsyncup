@@ -1,0 +1,153 @@
+#!/bin/bash
+#-------------------------------------------------------------------------------------------------------
+#	rsyncup-helper
+#					version : 	0.02
+#					modified : 	13/02/06
+#					created : 	13/01/16
+#					creator :	lucol
+#-------------------------------------------------------------------------------------------------------
+#	resources
+#					-
+#-------------------------------------------------------------------------------------------------------
+#	To do
+#					. 
+#-------------------------------------------------------------------------------------------------------
+
+
+
+### Internal vars
+
+	prmRsyncConf='/etc/rsyncd.conf'
+	prmLog="/usr/local/scripts/$(basename $0).log" ; echo "" >$prmLog
+	prmTimeOut=300
+
+
+### Functions
+
+	function getRsyncGroupPath {
+		#$1 = Group Name
+		local result
+		result=$(cat "$prmRsyncConf" | sed -n "/\[$1\]/,/path/p" | sed -e '/path/!d' -e 's/.*=//' -e 's/ //g')
+		[ ! $result ] && return 1
+		echo $result
+	}
+
+	function getRsyncGroupInfo {
+		#$1=GroupName $2=Info
+		local groupPath result buff
+		if [ $2 == 'pat' ] || [ $2 == 'path' ]; then
+			buff=($(echo $1 | sed 's|/| |'))
+			if [ ! ${buff[1]} ]; then
+				errorMessage "Path not defined!" ; return 1
+			fi
+			groupPath=$(getRsyncGroupPath ${buff[0]})
+		else
+			groupPath=$(getRsyncGroupPath $1)
+		fi
+		
+		if [ $? -ne 0 ]; then
+			errorMessage "Group unknown!" ; return 1
+		fi
+		case $2 in
+			vol)
+				result=($(df -h $groupPath | tail -1))
+				;;
+			dir)
+				result=($(du -sh $groupPath))
+				;;
+			pat|path)
+				if [ ! -d $groupPath/${buff[1]} ]; then
+					errorMessage "Path not exists: ${buff[1]}" ; return 1
+				fi
+				result=($(du -sh $groupPath/${buff[1]}))
+				;;
+			*)			
+				errorMessage "Unknow param: $2" ; return 1
+		esac
+		[ $result ] && standardMessage "${result[*]}"
+	}
+
+	function showHelp {
+		echo "----"
+		echo "vol:GROUP-NAME       returns partition stats"
+		echo "dir:GROUP-NAME       returns group disk usage"
+		echo "pat:GROUP-NAME/path  returns directory disk usage"
+		echo "test            returns 'ok!'"
+		echo "----"
+		echo ""	
+	}
+
+	function errorMessage {
+		#$1 str
+		echo "ERR: $1"
+		echo "$sessionNbr - $(date '+%H:%M:%S') < ERR: $1" >>$prmLog
+	}
+	
+	function standardMessage {
+		#$1 str
+		echo -e "$1"
+		logMessage "< $1"
+	}
+	
+	function logMessage {
+		#$1 str
+		echo "$sessionNbr - $(date '+%H:%M:%S') $1" >>$prmLog
+	}
+
+
+### Start
+
+	sessionNbr=$(date '+%y%m%d%H%M%S')
+	logMessage "Start: $(date '+%y-%m-%d %H:%M:%S')"
+
+
+### Main
+
+	startTime=$(date '+%s') ; lapTime=$startTime
+	
+	while test 1; do
+
+		read -t 5 message
+		message=$(echo $message | tr -d '\r')
+
+		if [ $message ]; then
+			startTime=$(date '+%s')
+			
+			logMessage "> $message"
+			data=($(echo "$message" | sed 's/:/ /g'))
+
+			case ${data[0]} in
+
+				vol|dir|pat|'path')
+					if [ ! ${data[1]} ]; then
+						errorMessage "Missing param!"
+					else
+						getRsyncGroupInfo ${data[1]} ${data[0]}
+					fi
+					;;
+
+				quit|QUIT) standardMessage "bye!" ; break ;;
+
+				test|TEST) standardMessage "ok!" ;;
+					
+				help|HELP) showHelp ;;
+					
+				*) errorMessage "Message Unknown!"
+			esac
+			
+		else
+			lapTime=$(date '+%s')
+			if (( ($startTime+$prmTimeOut) < $lapTime )); then
+				standardMessage "Time out! Exiting!"
+				break
+			fi
+		fi
+
+	done
+
+
+### Terminating
+
+	logMessage "Terminating $(date '+%y-%m-%d %H:%M:%S')"
+
+
