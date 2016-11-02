@@ -7,17 +7,133 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		3623C5251DAF826D003EBC4E /* rsyncup.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = rsyncup.sh; sourceTree = "<group>"; };
+		3623C5251DAF826D003EBC4E /* rsyncup */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = rsyncup; sourceTree = "<group>"; };
 		3623C5261DAF8275003EBC4E /* rsyncup.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = rsyncup.conf; sourceTree = "<group>"; };
+		3623C52D1DAF8519003EBC4E /* rsyncup-helper */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-helper"; sourceTree = "<group>"; };
+		3623C5341DAF863B003EBC4E /* rsyncup.emailtmpl */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsyncup.emailtmpl; sourceTree = "<group>"; };
+		3623C5351DAF864B003EBC4E /* rsyncup.exclusions */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsyncup.exclusions; sourceTree = "<group>"; };
+		3623C53A1DAF868A003EBC4E /* crontab */ = {isa = PBXFileReference; lastKnownFileType = text; path = crontab; sourceTree = "<group>"; };
+		3623C53B1DAF868A003EBC4E /* fr.asity.rsyncup.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = fr.asity.rsyncup.plist; sourceTree = "<group>"; };
+		3623C53F1DAF86D2003EBC4E /* rsyncd.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsyncd.conf; sourceTree = "<group>"; };
+		3623C5401DAF86D2003EBC4E /* services */ = {isa = PBXFileReference; lastKnownFileType = text; path = services; sourceTree = "<group>"; };
+		3623C5421DAF86D2003EBC4E /* iptables */ = {isa = PBXFileReference; lastKnownFileType = text; path = iptables; sourceTree = "<group>"; };
+		3623C5441DAF86D2003EBC4E /* rsync */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsync; sourceTree = "<group>"; };
+		3623C5451DAF86D2003EBC4E /* rsynckups */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsynckups; sourceTree = "<group>"; };
+		3623C5481DAF86D2003EBC4E /* __Mac OS X Hints - A detailed walkthrough on creating backups using rsync.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "__Mac OS X Hints - A detailed walkthrough on creating backups using rsync.webloc"; sourceTree = "<group>"; };
+		3623C5491DAF86D2003EBC4E /* Bahut- rsync server daemon on Mac OS X with launchctl (with user & password).webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Bahut- rsync server daemon on Mac OS X with launchctl (with user & password).webloc"; sourceTree = "<group>"; };
+		3623C54A1DAF86D2003EBC4E /* rsyncd setup on Mac OsX. (with user & password).webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "rsyncd setup on Mac OsX. (with user & password).webloc"; sourceTree = "<group>"; };
+		3623C54B1DAF86D2003EBC4E /* fr.asity.rsyncd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = fr.asity.rsyncd.plist; sourceTree = "<group>"; };
+		3623C54C1DAF86D2003EBC4E /* HOW TO- Install the rsync daemon on Mac OS X.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "HOW TO- Install the rsync daemon on Mac OS X.webloc"; sourceTree = "<group>"; };
+		3623C54E1DAF86EF003EBC4E /* ‎www.cs.dartmouth.edu-~campbell-cs50-socketprogramming.html.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "‎www.cs.dartmouth.edu-~campbell-cs50-socketprogramming.html.webloc"; sourceTree = "<group>"; };
+		3623C5501DAF86FC003EBC4E /* rsyncup-todo */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsyncup-todo"; sourceTree = "<group>"; };
+		3623C5511DAF86FC003EBC4E /* rsyncup-todo state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsyncup-todo state"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
 		3623C51E1DAF81F3003EBC4E = {
 			isa = PBXGroup;
 			children = (
-				3623C5251DAF826D003EBC4E /* rsyncup.sh */,
+				3623C5251DAF826D003EBC4E /* rsyncup */,
 				3623C5261DAF8275003EBC4E /* rsyncup.conf */,
+				3623C52D1DAF8519003EBC4E /* rsyncup-helper */,
+				3623C5341DAF863B003EBC4E /* rsyncup.emailtmpl */,
+				3623C5351DAF864B003EBC4E /* rsyncup.exclusions */,
+				3623C54D1DAF86EF003EBC4E /* refs */,
+				3623C53C1DAF86D2003EBC4E /* servers */,
+				3623C5391DAF868A003EBC4E /* clients */,
+				3623C54F1DAF86FC003EBC4E /* todos */,
 			);
+			sourceTree = "<group>";
+		};
+		3623C5391DAF868A003EBC4E /* clients */ = {
+			isa = PBXGroup;
+			children = (
+				3623C53A1DAF868A003EBC4E /* crontab */,
+				3623C53B1DAF868A003EBC4E /* fr.asity.rsyncup.plist */,
+			);
+			path = clients;
+			sourceTree = "<group>";
+		};
+		3623C53C1DAF86D2003EBC4E /* servers */ = {
+			isa = PBXGroup;
+			children = (
+				3623C53D1DAF86D2003EBC4E /* Linux */,
+				3623C5461DAF86D2003EBC4E /* MacOSX */,
+			);
+			path = servers;
+			sourceTree = "<group>";
+		};
+		3623C53D1DAF86D2003EBC4E /* Linux */ = {
+			isa = PBXGroup;
+			children = (
+				3623C53E1DAF86D2003EBC4E /* etc */,
+			);
+			path = Linux;
+			sourceTree = "<group>";
+		};
+		3623C53E1DAF86D2003EBC4E /* etc */ = {
+			isa = PBXGroup;
+			children = (
+				3623C53F1DAF86D2003EBC4E /* rsyncd.conf */,
+				3623C5401DAF86D2003EBC4E /* services */,
+				3623C5411DAF86D2003EBC4E /* sysconfig */,
+				3623C5431DAF86D2003EBC4E /* xinetd.d */,
+			);
+			path = etc;
+			sourceTree = "<group>";
+		};
+		3623C5411DAF86D2003EBC4E /* sysconfig */ = {
+			isa = PBXGroup;
+			children = (
+				3623C5421DAF86D2003EBC4E /* iptables */,
+			);
+			path = sysconfig;
+			sourceTree = "<group>";
+		};
+		3623C5431DAF86D2003EBC4E /* xinetd.d */ = {
+			isa = PBXGroup;
+			children = (
+				3623C5441DAF86D2003EBC4E /* rsync */,
+				3623C5451DAF86D2003EBC4E /* rsynckups */,
+			);
+			path = xinetd.d;
+			sourceTree = "<group>";
+		};
+		3623C5461DAF86D2003EBC4E /* MacOSX */ = {
+			isa = PBXGroup;
+			children = (
+				3623C5471DAF86D2003EBC4E /* -DOC */,
+				3623C54B1DAF86D2003EBC4E /* fr.asity.rsyncd.plist */,
+				3623C54C1DAF86D2003EBC4E /* HOW TO- Install the rsync daemon on Mac OS X.webloc */,
+			);
+			path = MacOSX;
+			sourceTree = "<group>";
+		};
+		3623C5471DAF86D2003EBC4E /* -DOC */ = {
+			isa = PBXGroup;
+			children = (
+				3623C5481DAF86D2003EBC4E /* __Mac OS X Hints - A detailed walkthrough on creating backups using rsync.webloc */,
+				3623C5491DAF86D2003EBC4E /* Bahut- rsync server daemon on Mac OS X with launchctl (with user & password).webloc */,
+				3623C54A1DAF86D2003EBC4E /* rsyncd setup on Mac OsX. (with user & password).webloc */,
+			);
+			path = "-DOC";
+			sourceTree = "<group>";
+		};
+		3623C54D1DAF86EF003EBC4E /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				3623C54E1DAF86EF003EBC4E /* ‎www.cs.dartmouth.edu-~campbell-cs50-socketprogramming.html.webloc */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		3623C54F1DAF86FC003EBC4E /* todos */ = {
+			isa = PBXGroup;
+			children = (
+				3623C5501DAF86FC003EBC4E /* rsyncup-todo */,
+				3623C5511DAF86FC003EBC4E /* rsyncup-todo state */,
+			);
+			path = todos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
