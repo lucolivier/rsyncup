@@ -1,7 +1,7 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------------------------
 #	rsyncup
-#					version : 	1.01
+#					version : 	1.02ß
 #					modified : 	2016/11/02
 #					created : 	2013/01/23
 #					creator :	Luc-Olivier Lafeuille / https://github.com/lucolivier
@@ -320,7 +320,7 @@ debug=1
 		valueO="$3"
 		if [ "$3" == 'conf' ]; then
 			valueO="$(getArrayValueByKey $array $2 '|')"
-#echo "--O $valueO --"
+                                                                                        #echo "--O $valueO --"
 			#if [ "$valueO" == 'Not exists!' ]; then
 			if [ $? -ne 0 ]; then
 				if [ ! $5 ]; then
@@ -338,7 +338,7 @@ debug=1
 		fi
 		if [ $res -ne 1 ]; then
 			valueF=$(checkValue "$valueO" $4)
-#echo "--F $4 $valueF --"
+                                                                                        #echo "--F $4 $valueF --"
 			if [ "$valueF" == '' ] || [ "$valueF" == '-' ]; then
 				if [ "$1" == 'global' ]; then
 					mess="'$2' param ($valueO) wrong in Global of $(basename $prmFile) file."
@@ -429,7 +429,10 @@ debug=1
 				fi
 				return 0
 			else
-				setParam backupset $1 $2 $3 $4
+                setParam backupset $1 $2 $3 $4
+                if [ $1 == "StoragePath" ] && [ $prmItemServer == 'global' ] && [ "$prmGlobalStoragePath" ]; then
+                    prmItemStoragePath=$(echo "${prmGlobalStoragePath}/$prmItemStoragePath" | sed 's/\\\\/\\/g')
+                fi
 				return $?
 			fi
 		else
@@ -986,7 +989,7 @@ debug=1
 		if [ ! $prmItemName ] && [ ! "$prmItemFiles" ] && [ $prmItemDB ]; then
 			prmItemName=$(upperCase $(echo $prmItemDB | sed 's/:.*//'))
 		fi
-		
+
 		setBackupSetParam Server 'conf' 'a3' optional
 
 		if [ $prmItemServer ] && [ ! "$prmItemServer" == 'global' ]; then
@@ -1155,10 +1158,10 @@ debug=1
 			let curSetParamErr+=1 ; pass=0
 		fi
 		if [ $prmItemStorage == 'local' ]; then
-			if [ ! $(echo "$prmItemStoragePath" | sed '/^\//!d') ]; then
+			if [ ! "$(echo "$prmItemStoragePath" | sed '/^\//!d')" ]; then
 				logEntry2Err "'StoragePath' path can't be relative ($prmItemStoragePath) for local backup."
 				let curSetParamErr+=1
-			elif [ ! -d $(dirname "$prmItemStoragePath") ]; then
+			elif [ ! -d "$(dirname "$prmItemStoragePath")" ]; then
 				logEntry2Err "'StoragePath' path dir not exists ($(dirname $prmItemStoragePath)) for local backup."
 				let curSetParamErr+=1
 			elif [ ! "$prmItemStoragePath" ]; then
