@@ -18,7 +18,7 @@
 		3623C5401DAF86D2003EBC4E /* services */ = {isa = PBXFileReference; lastKnownFileType = text; path = services; sourceTree = "<group>"; };
 		3623C5421DAF86D2003EBC4E /* iptables */ = {isa = PBXFileReference; lastKnownFileType = text; path = iptables; sourceTree = "<group>"; };
 		3623C5441DAF86D2003EBC4E /* rsync */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsync; sourceTree = "<group>"; };
-		3623C5451DAF86D2003EBC4E /* rsynckups */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsynckups; sourceTree = "<group>"; };
+		3623C5451DAF86D2003EBC4E /* rsyncup */ = {isa = PBXFileReference; lastKnownFileType = text; path = rsyncup; sourceTree = "<group>"; };
 		3623C5481DAF86D2003EBC4E /* __Mac OS X Hints - A detailed walkthrough on creating backups using rsync.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "__Mac OS X Hints - A detailed walkthrough on creating backups using rsync.webloc"; sourceTree = "<group>"; };
 		3623C5491DAF86D2003EBC4E /* Bahut- rsync server daemon on Mac OS X with launchctl (with user & password).webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Bahut- rsync server daemon on Mac OS X with launchctl (with user & password).webloc"; sourceTree = "<group>"; };
 		3623C54A1DAF86D2003EBC4E /* rsyncd setup on Mac OsX. (with user & password).webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "rsyncd setup on Mac OsX. (with user & password).webloc"; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				3623C5441DAF86D2003EBC4E /* rsync */,
-				3623C5451DAF86D2003EBC4E /* rsynckups */,
+				3623C5451DAF86D2003EBC4E /* rsyncup */,
 			);
 			path = xinetd.d;
 			sourceTree = "<group>";
