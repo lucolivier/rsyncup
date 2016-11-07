@@ -27,6 +27,10 @@
 		3623C54E1DAF86EF003EBC4E /* ‎www.cs.dartmouth.edu-~campbell-cs50-socketprogramming.html.webloc */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "‎www.cs.dartmouth.edu-~campbell-cs50-socketprogramming.html.webloc"; sourceTree = "<group>"; };
 		3623C5501DAF86FC003EBC4E /* rsyncup-todo */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsyncup-todo"; sourceTree = "<group>"; };
 		3623C5511DAF86FC003EBC4E /* rsyncup-todo state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsyncup-todo state"; sourceTree = "<group>"; };
+		36D8D2911DD118C100D9BD34 /* rsyncup-local-as-global.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-local-as-global.conf"; sourceTree = "<group>"; };
+		36D8D2931DD11C3100D9BD34 /* rsyncup-remote-and-local.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-remote-and-local.conf"; sourceTree = "<group>"; };
+		36D8D2941DD11D8F00D9BD34 /* rsynckups-remote-for-web.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsynckups-remote-for-web.conf"; sourceTree = "<group>"; };
+		36D8D2951DD1212B00D9BD34 /* rsyncup-remote-lab.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-remote-lab.conf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -34,10 +38,10 @@
 			isa = PBXGroup;
 			children = (
 				3623C5251DAF826D003EBC4E /* rsyncup */,
-				3623C5261DAF8275003EBC4E /* rsyncup.conf */,
-				3623C52D1DAF8519003EBC4E /* rsyncup-helper */,
+				36D8D2921DD118CF00D9BD34 /* rsyncup.conf */,
 				3623C5341DAF863B003EBC4E /* rsyncup.emailtmpl */,
 				3623C5351DAF864B003EBC4E /* rsyncup.exclusions */,
+				3623C52D1DAF8519003EBC4E /* rsyncup-helper */,
 				3623C54D1DAF86EF003EBC4E /* refs */,
 				3623C53C1DAF86D2003EBC4E /* servers */,
 				3623C5391DAF868A003EBC4E /* clients */,
@@ -134,6 +138,18 @@
 				3623C5511DAF86FC003EBC4E /* rsyncup-todo state */,
 			);
 			path = todos;
+			sourceTree = "<group>";
+		};
+		36D8D2921DD118CF00D9BD34 /* rsyncup.conf */ = {
+			isa = PBXGroup;
+			children = (
+				3623C5261DAF8275003EBC4E /* rsyncup.conf */,
+				36D8D2951DD1212B00D9BD34 /* rsyncup-remote-lab.conf */,
+				36D8D2911DD118C100D9BD34 /* rsyncup-local-as-global.conf */,
+				36D8D2941DD11D8F00D9BD34 /* rsynckups-remote-for-web.conf */,
+				36D8D2931DD11C3100D9BD34 /* rsyncup-remote-and-local.conf */,
+			);
+			name = rsyncup.conf;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

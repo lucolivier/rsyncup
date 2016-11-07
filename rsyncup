@@ -1,8 +1,8 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------------------------
 #	rsyncup
-#					version : 	1.02ß
-#					modified : 	2016/11/02
+#					version : 	1.02ß01
+#					modified : 	2016/11/07
 #					created : 	2013/01/23
 #					creator :	Luc-Olivier Lafeuille / https://github.com/lucolivier
 #-------------------------------------------------------------------------------------------------------
@@ -87,8 +87,8 @@ debug=1
 			if [ "$1" == 'err' ]; then
 				let curErr=$curErr+$lineCtr
 				let curSetErr=$curSetErr+$lineCtr
-				logEntry2 "***errors report***" >>$prmLog
-				cat "$prmTmpLog" >>$prmLog
+				logEntry2 "***errors report***" >>"$prmLog"
+				cat "$prmTmpLog" >>"$prmLog"
 				[ "$prmItemReportPath" ] && cat "$prmTmpLog" >>"$prmItemReportLog"
 			fi
 		fi
@@ -430,7 +430,7 @@ debug=1
 				return 0
 			else
                 setParam backupset $1 $2 $3 $4
-                if [ $1 == "StoragePath" ] && [ $prmItemServer == 'global' ] && [ "$prmGlobalStoragePath" ]; then
+                if [ "$1" == "StoragePath" ] && [ $prmItemServer == 'global' ] && [ "$prmGlobalStoragePath" ]; then
                     prmItemStoragePath=$(echo "${prmGlobalStoragePath}/$prmItemStoragePath" | sed 's/\\\\/\\/g')
                 fi
 				return $?

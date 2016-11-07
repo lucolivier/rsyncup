@@ -1,7 +1,2 @@
 
-change “check params reliability” 
-- to integrate relative path while global is set
-- to check that if server path must be relative
-
-
-find the place to concatenate global and relative path
+Test the new version remotely
