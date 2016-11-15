@@ -1,8 +1,8 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------------------------
 #	rsyncup
-#					version : 	1.02ß01
-#					modified : 	2016/11/07
+#					version : 	1.03ß00
+#					modified : 	2016/11/15
 #					created : 	2013/01/23
 #					creator :	Luc-Olivier Lafeuille / https://github.com/lucolivier
 #-------------------------------------------------------------------------------------------------------
@@ -25,7 +25,7 @@
 #		>1	echo setParamValue
 #		>2	void logFolder
 #		>3	don't execute backup
-debug=1
+debug=6
 
 ### Funcs
 #
@@ -766,7 +766,8 @@ debug=1
 	logEntry "StoreGroupMax: $prmStoreGroupMax"
 	[ ! "$curOS" == 'Darwin' ] && logEntry "MailFromReport: $prmMailFromReport"
 	logEntry "MailToReport: $prmMailToReport"
-	logEntry "MailSubjectReport: $prmMailSubjectReport"
+	logEntry "MailFromReport: $prmMailFromReport"
+    logEntry "MailSubjectReport: $prmMailSubjectReport"
 
 ### Setup execution environment
 #
@@ -1364,8 +1365,10 @@ debug=1
 
 	#116# Mail Dedicated Report
 	#
+
                                                                                                             [ $debug -gt 4 ] && echo "116# Mail Dedicated Report"
 		if [ $prmItemReportMail ]; then
+
 			if [ $prmEmailTmpl ]; then
 				rptDB='No DB' ; [ $prmItemDB ] && rptDB=${prmItemDB_Tb[0]}
 				rptErr='Successful' ; rptErrStamp=
@@ -1379,7 +1382,7 @@ debug=1
 				elif [ "$prmItemReportPath" ]; then
 					rptLog="$prmItemReportPath"
 				fi
-				
+
 				cat "$prmEmailTmpl" | \
 					sed -e "s|%HOSTNAME%|$(hostname)|"				\
 						-e "s|%NAME%|$prmItemName|"					\

@@ -29,7 +29,7 @@
 		3623C5511DAF86FC003EBC4E /* rsyncup-todo state */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsyncup-todo state"; sourceTree = "<group>"; };
 		36D8D2911DD118C100D9BD34 /* rsyncup-local-as-global.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-local-as-global.conf"; sourceTree = "<group>"; };
 		36D8D2931DD11C3100D9BD34 /* rsyncup-remote-and-local.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-remote-and-local.conf"; sourceTree = "<group>"; };
-		36D8D2941DD11D8F00D9BD34 /* rsynckups-remote-for-web.conf */ = {isa = PBXFileReference; lastKnownFileType = text; path = "rsynckups-remote-for-web.conf"; sourceTree = "<group>"; };
+		36D8D2941DD11D8F00D9BD34 /* rsyncup-remote-for-web.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-remote-for-web.conf"; sourceTree = "<group>"; };
 		36D8D2951DD1212B00D9BD34 /* rsyncup-remote-lab.conf */ = {isa = PBXFileReference; explicitFileType = text.script.sh; path = "rsyncup-remote-lab.conf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,7 +146,7 @@
 				3623C5261DAF8275003EBC4E /* rsyncup.conf */,
 				36D8D2951DD1212B00D9BD34 /* rsyncup-remote-lab.conf */,
 				36D8D2911DD118C100D9BD34 /* rsyncup-local-as-global.conf */,
-				36D8D2941DD11D8F00D9BD34 /* rsynckups-remote-for-web.conf */,
+				36D8D2941DD11D8F00D9BD34 /* rsyncup-remote-for-web.conf */,
 				36D8D2931DD11C3100D9BD34 /* rsyncup-remote-and-local.conf */,
 			);
 			name = rsyncup.conf;
