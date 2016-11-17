@@ -1,7 +1,7 @@
 #!/bin/bash
 #-------------------------------------------------------------------------------------------------------
 #	rsyncup
-#					version : 	1.03ß00
+#					version : 	1.03ß01
 #					modified : 	2016/11/15
 #					created : 	2013/01/23
 #					creator :	Luc-Olivier Lafeuille / https://github.com/lucolivier
@@ -430,7 +430,7 @@ debug=6
 				return 0
 			else
                 setParam backupset $1 $2 $3 $4
-                if [ "$1" == "StoragePath" ] && [ $prmItemServer == 'global' ] && [ "$prmGlobalStoragePath" ]; then
+                if [ "$1" == "StoragePath" ] && [ "$prmItemServer" == 'global' ] && [ "$prmGlobalStoragePath" ]; then
                     prmItemStoragePath=$(echo "${prmGlobalStoragePath}/$prmItemStoragePath" | sed 's/\\\\/\\/g')
                 fi
 				return $?
