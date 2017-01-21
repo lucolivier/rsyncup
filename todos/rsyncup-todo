@@ -1,7 +1,11 @@
 Rsynckups
 	Test 1.00ß00
 	ANDO & EXO
-	
+
+
+WARNING WARNING > Mail special mention when script is on debug mode
+
+
 	Behaviors
 	_____ Possibility to backup / (with other partitions exclusions)
 	__X__ Possibility to backup localy
